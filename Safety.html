@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standard Goat Crackers</title>
+    <!-- Bootstrap cdn here -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- style.css here -->
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/product.css">
+        <link rel="stylesheet" href="/css/about.css">
+
+    <!-- google icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+     <!-- Script file -->
+    <script src="/js/script.js"></script>
+      <style>
+    body {
+      margin: 0;
+    }
+ 
+    .cracker-banner {
+      position: relative;
+      height: 70vh;
+      overflow: hidden;
+    }
+
+    .cracker-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; 
+    }
+
+   
+    .firework {
+      position: absolute;
+      bottom: 0;
+      width: 4px;
+      height: 60px;
+      background: transparent;
+      animation: launch 3s ease-out infinite;
+    }
+
+    /* Explosion particles */
+    .firework::before,
+    .firework::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      background: transparent;
+      width: 6px;
+      height: 6px;
+      animation: explode 2.5s ease-out infinite;
+    }
+
+    .firework::before {
+      box-shadow: 
+        0 -30px yellow,
+        25px -25px red,
+        -25px -25px blue,
+        30px 0 orange,
+        -30px 0 lime,
+        20px 20px violet,
+        -20px 20px gold,
+        0 30px cyan;
+    }
+
+    .firework::after {
+      box-shadow: 
+        0 -40px white,
+        35px -35px orange,
+        -35px -35px pink,
+        40px 0 red,
+        -40px 0 green,
+        25px 25px yellow,
+        -25px 25px purple,
+        0 40px lightblue;
+    }
+
+    /* Launch animation */
+    @keyframes launch {
+      0% { bottom: 0; opacity: 1; }
+      70% { bottom: 60%; opacity: 1; }
+      100% { bottom: 70%; opacity: 0; }
+    }
+
+    /* Explosion animation */
+    @keyframes explode {
+      0%, 60% { transform: scale(0.2); opacity: 0; }
+      70% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.5); opacity: 0; }
+    }
+
+    /* Firework positions */
+    .firework:nth-child(2) { left: 20%; animation-delay: 0s; }
+    .firework:nth-child(3) { left: 50%; animation-delay: 1s; }
+    .firework:nth-child(4) { left: 75%; animation-delay: 1.8s; }
+    .firework:nth-child(5) { left: 35%; animation-delay: 2.5s; }
+    .firework:nth-child(6) { left: 65%; animation-delay: 3s; }
+
+    /* Tablet view */
+    @media (max-width: 768px) {
+      .cracker-banner {
+        height: 50vh;
+      }
+      .firework { height: 40px; }
+    }
+
+    /* Mobile view */
+    @media (max-width: 576px) {
+      .cracker-banner {
+        height: 40vh;
+      }
+      .firework { height: 30px; }
+    }
+  </style>
+
+</head>
+<body>
+    <section id="safety-page">
+
+    <!-- topBar Header -->
+        <div class="container-fluid main-container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+                    <div class=" text-white py-3">
+                        <p class="mb-0 topbar-text">
+                        Offline Booking, support: 91 9944046496 | Complaints,<br> Payments: 91 9944046496 | Dispatch Details: 91 8940460124
+                        </p>        
+                    </div>
+
+                </div>
+            </div>
+                
+        </div>    <!-- logo image -->
+        <div class="container-fluid">
+            <div class="row justify-content-center align-content-center">
+                <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                    <div class=" text-white py-3">
+                        <img src="../images/logo_cracker.jpeg" alt="" class="logo-img bg-white" >
+                                
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+        <!-- Navbar here -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+
+                <!-- Mobile menu button -->
+                <button class="navbar-toggler border-0 btn-bar ms-auto d-lg-none"
+                type="button" data-bs-toggle="offcanvas" data-bs-target="#top-navbar"
+                aria-controls="top-navbar">
+                <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <!-- Offcanvas Menu -->
+                <div class="offcanvas offcanvas-end bg-black" tabindex="-1" id="top-navbar">
+                
+                    <!-- Close button -->
+                    <div class="d-flex justify-content-end">
+                        <button class="btn text-white fs-1 me-3 mt-3 border-0 d-lg-none"
+                        type="button" data-bs-dismiss="offcanvas" aria-label="Close">
+                        <i class="fa-regular fa-circle-xmark"></i>
+                        </button>
+                    </div>
+
+                    <!-- Navigation Links -->
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav w-100 text-center text-lg-start d-lg-flex justify-content-lg-center gap-lg-2 align-items-lg-center">
+                        <li class="nav-item"><a href="Home.html" class="nav-link">HOME <span>|</span></a></li>
+                        <li class="nav-item"><a href="About.html" class="nav-link">ABOUT US <span>|</span></a></li>
+                        <li class="nav-item"><a href="index.html" class="nav-link">PRODUCTS <span>|</span></a></li>
+                        <li class="nav-item"><a href="Safety.html" class="nav-link">SAFETY TIPS <span>|</span></a></li>
+                        <li class="nav-item"><a href="Contact.html" class="nav-link">CONTACT US <span>|</span></a></li>
+                        <li class="nav-item"><a href="Payment.html" class="nav-link">PAYMENT</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+                <!-- Banner Section -->
+        <div class="cracker-banner">
+            <img src="../images/Safetytips.png" alt="Safety Tips Banner">
+            <!-- Fireworks -->
+            <div class="firework"></div>
+            <div class="firework"></div>
+            <div class="firework"></div>
+            <div class="firework"></div>
+            <div class="firework"></div>
+            <div class="firework"></div>
+        </div>
+
+
+        <!-- Safety Card Section -->
+        <div class="container mt-5">
+            <div class="card shadow-lg border-0 mx-auto p-4 text-center" style="max-width: 900px; background-color: blueviolet;">
+            <h1 class="text-warning pb-3">🎇 Ayoora Crackers 🎇</h1>
+            <p class="text-light">
+                Purchasing, lighting, and storing fireworks involve a set of important guidelines.
+                Consequently, it is of utmost importance to follow safety measures when handling fireworks,
+                as even the smallest oversights, lack of knowledge, or inattentiveness can lead to serious harm.
+            </p>
+
+            <div class="tips mt-4">
+                <h4 class="fw-semibold text-warning">Kindly read the safety tips before bursting the crackers</h4>
+                <img src="../images/safety.jpg" 
+                    alt="Safety Tips" class="img-fluid rounded shadow">
+            </div>
+            </div>
+        </div>
+        <!-- Do’s & Don’ts Section -->
+        <div class="container my-5">
+            <h4 class="text-center mb-4">🎇 Cracker Safety: Do’s & Don’ts 🎆</h4>
+            <div class="row g-4">
+            <!-- DO Column -->
+            <div class="col-md-6">
+                <div class="p-4 rounded shadow-sm h-100" style="background-color: green;">
+                <h3 class="text-light mb-3">✅ Do’s</h3>
+                <ul class="list-unstyled">
+                    <li class="bg-light p-3 mb-3 rounded shadow-sm">✅ Light crackers only in open spaces</li>
+                    <li class="bg-light p-3 mb-3 rounded shadow-sm">✅ Keep a bucket of water or sand nearby</li>
+                    <li class="bg-light p-3 mb-3 rounded shadow-sm">✅ Wear cotton clothes (avoid synthetic)</li>
+                    <li class="bg-light p-3 mb-3 rounded shadow-sm">✅ Maintain a safe distance after lighting</li>
+                    <li class="bg-light p-3 mb-3 rounded shadow-sm">✅ Always supervise children</li>
+                    <li class="bg-light p-3 mb-3 rounded shadow-sm">✅ Always Wear Eye Protection when Lightening Fireworks.</li>
+                    <li class="bg-light p-3 mb-3 rounded shadow-sm">✅ Always an Adult should Supervise the use of Fireworks.</li>
+                    <li class="bg-light p-3 mb-3 rounded shadow-sm">✅ Always Follow the Safety tips marked on the Fireworks.</li>
+                    <li class="bg-light p-3 mb-3 rounded shadow-sm">✅ Keep a Bucket of Water or a Garden Hose Handy in Case of Fire or Other Mishap.</li>
+                </ul>
+                </div>
+            </div>
+
+            <!-- DON'T Column -->
+            <div class="col-md-6">
+                <div class="p-4 rounded shadow-sm h-100" style="background-color: orangered;">
+                <h3 class="text-light mb-3">❌ Don’ts</h3>
+                <ul class="list-unstyled">
+                    <li class="bg-light p-3 mb-3 rounded shadow-sm">❌ Don’t light crackers in closed spaces</li>
+                    <li class="bg-light p-3 mb-3 rounded shadow-sm">❌ Never hold crackers in hand while lighting</li>
+                    <li class="bg-light p-3 mb-3 rounded shadow-sm">❌ Don’t throw or chase burning crackers</li>
+                    <li class="bg-light p-3 mb-3 rounded shadow-sm">❌ Avoid mixing alcohol with cracker celebration</li>
+                    <li class="bg-light p-3 mb-3 rounded shadow-sm">❌ Don’t allow kids to light crackers alone</li>
+                    <li class="bg-light p-3 mb-3 rounded shadow-sm">❌ Never carry fireworks in your pockets</li>
+                    <li class="bg-light p-3 mb-3 rounded shadow-sm">❌ Don’t Wear loose flowing clothes</li>
+                    <li class="bg-light p-3 mb-3 rounded shadow-sm">❌ Don’t use crackers in parking areas</li>
+                    <li class="bg-light p-3 mb-3 rounded shadow-sm">❌ Don’t burst crackers where people are walking or passing by</li>
+                </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer here -->
+    <footer class="mt-5 mb-0">
+        <div class="container-fluid footer-top-container mb-0 p-2">
+            <div class="d-flex flex-row main-row justify-content-between align-items-center text-center p-5">
+                <ul class="list-unstyled d-flex  mx-auto">
+                    <li><a href="Home.html" class="text-decoration-none text-white fw-bold">Home</a></li>
+                    <li><a href="About.html" class="text-decoration-none text-white fw-bold">About Us</a></li>
+                    <li><a href="index.html" class="text-decoration-none text-white fw-bold">Products</a></li>
+                    <li><a href="Safety.html" class="text-decoration-none text-white fw-bold">Safety Tips</a></li>
+                    <li><a href="Contact.html" class="text-decoration-none text-white fw-bold">Contact Us</a></li>
+                    <li><a href="Payment.html" class="text-decoration-none text-white fw-bold">Payment</a></li>
+                </ul>
+
+            </div>
+            <div class="d-flex flex-column address">
+                <ul class=" mx-auto">
+                    <li class="list-unstyled">
+                    Rathnapuri Nagar, Meenampatti,
+                    </li>
+                    <li class="list-unstyled">
+                        Sivakasi-Sattur Road, Sivakasi,
+                    </li>
+                    <li class="list-unstyled">
+                        Tamilnadu – 626189
+                    </li>
+                    <li class="list-unstyled">
+                        ayooracrackers@gmail.com
+                    </li>
+                </ul>
+
+            </div>
+            <div class="d-flex flex-row p-1">
+                <p class="mx-auto footer-phone">+91 9944046496 | +91 8940460124 </p>
+            </div>
+
+            <div class="d-flex flex-row p-1">
+                <div class="mx-auto">
+                    <i class="fa-brands fa-facebook-f mx-2"></i>
+                    <i class="fa-brands fa-instagram mx-2"></i>
+                    <i class="fa-brands fa-youtube mx-2"></i>
+
+                </div>
+            </div>
+            <div class=" p-5 footer-content">
+                <p class="mx-3">
+                    Online sale of firecrackers are not permitted! We value our customers and at the same time, respect jurisdiction. We request you to add your products to the cart and submit the required crackers through the enquiry button. We will contact you within 24 hrs and we will give quote through WhatsApp or phone call. 
+                    Please add and submit your enquiries and enjoy your Diwali with Ayoora Crackers Order. Our License No.—-.Ayoora Crackers Order as a company following 100% legal &amp; statutory compliances and all our shops, go-downs are maintained as per the explosive acts. We send the parcels through registered and legal transport service providers as like every other major companies in Sivakasi is doing so.           
+                </p>
+            </div>
+        </div>
+        <div class="container-fluid bottom-container">
+            <p class="text-center pt-2">Copyright @ 2023 ayooracrackers | All rights reserved</p>
+
+        </div>
+    </footer>
+ <!-- floating Watsapp & cAll -->
+     <div class="floating-icons d-flex flex-column gap-4">
+        <a href="tel:+919944046496" class="call-icon" title="Call Us">
+            <i class="fa-solid fa-phone-flip"></i>
+        </a>
+        <a href="https://wa.me/919944046496" class="whatsapp-icon" title="Chat on WhatsApp" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+    <!-- Script cdn here -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+</body>
+</html>

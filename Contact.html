@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standard Goat Crackers</title>
+    <!-- Bootstrap cdn here -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- style.css here -->
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/product.css">
+        <link rel="stylesheet" href="/css/about.css">
+
+    <!-- google icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+     <!-- Script file -->
+    <script src="/js/script.js"></script>
+
+    <style>
+     
+ 
+  /* optional hint text */
+.banner {
+  background: url('../images/product-banner.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative; /* needed for absolutely positioned canvas */
+  height: 75vh;
+  overflow: hidden;
+}
+.banner canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* clicks pass through to underlying elements */
+}
+
+    .contact-section {
+      padding: 50px 0;
+    }
+    .contact-card {
+       background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+      border-radius: 12px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      padding: 30px;
+       min-height: 100%; 
+    }
+    .map-container {
+      overflow: hidden;
+      border-radius: 12px;
+    }
+    .contact-card p {
+  font-size: 20px; /* or 13px if you want smaller */
+}
+  </style>
+
+
+</head>
+<body>
+    <section>
+        <div class="container-fluid main-container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+                    <div class=" text-white py-3">
+                        <p class="mb-0 topbar-text">
+                        Offline Booking, support: 91 9944046496 | Complaints,<br> Payments: 91 9944046496 | Dispatch Details: 91 8940460124
+                        </p>        
+                    </div>
+
+                </div>
+            </div>
+        
+        </div>
+    <!-- logo image -->
+        <div class="container-fluid">
+            <div class="row justify-content-center align-content-center">
+                <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                    <div class=" text-white py-3">
+                        <img src="../images/logo_cracker.jpeg" alt="" class="logo-img bg-white" >
+                                
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+        <!-- Navbar here -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+
+                <!-- Mobile menu button -->
+                <button class="navbar-toggler border-0 btn-bar ms-auto d-lg-none"
+                type="button" data-bs-toggle="offcanvas" data-bs-target="#top-navbar"
+                aria-controls="top-navbar">
+                <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <!-- Offcanvas Menu -->
+                <div class="offcanvas offcanvas-end bg-black" tabindex="-1" id="top-navbar">
+                
+                    <!-- Close button -->
+                    <div class="d-flex justify-content-end">
+                        <button class="btn text-white fs-1 me-3 mt-3 border-0 d-lg-none"
+                        type="button" data-bs-dismiss="offcanvas" aria-label="Close">
+                        <i class="fa-regular fa-circle-xmark"></i>
+                        </button>
+                    </div>
+
+                    <!-- Navigation Links -->
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav w-100 text-center text-lg-start d-lg-flex justify-content-lg-center gap-lg-2 align-items-lg-center">
+                        <li class="nav-item"><a href="Home.html" class="nav-link">HOME <span>|</span></a></li>
+                        <li class="nav-item"><a href="About.html" class="nav-link">ABOUT US <span>|</span></a></li>
+                        <li class="nav-item"><a href="index.html" class="nav-link">PRODUCTS <span>|</span></a></li>
+                        <li class="nav-item"><a href="Safety.html" class="nav-link">SAFETY TIPS <span>|</span></a></li>
+                        <li class="nav-item"><a href="Contact.html" class="nav-link">CONTACT US <span>|</span></a></li>
+                        <li class="nav-item"><a href="Payment.html" class="nav-link">PAYMENT</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="banner d-flex justify-content-center align-items-center">
+            <canvas id="fw"></canvas>
+        <h1 class="text-white fw-bold display-3">Contact Us</h1>
+        </div>
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="row g-4 align-items-stretch">
+
+                    <!-- Contact Info -->
+                    <div class="col-lg-6 d-flex">
+                        <div class="contact-card w-100">
+                            <h1 class="mb-3 text-danger">Get in Touch</h1>
+                            <p class="small mt-5 g-4"><strong>Address:</strong> Rathnapuri Nagar, Meenampatti,
+                                Sivakasi-Sattur Road, Sivakasi,
+                                Tamilnadu – 626189 </p>
+                            <p class="small"><strong>Phone:</strong> +91 9944046496 | +91 8940460124 </p>
+                            <p class="small"><strong>Email:</strong> ayooracrackers@gmail.com </p>
+                            <!-- <p class="small"><strong>Working Hours:</strong><br>Mon - Sun: 9:00 AM 
+                                - 10:00 PM </p> -->
+
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="col-lg-6 d-flex">
+                        <div class="contact-card w-100">
+                            <h3 class="mb-3 text-danger">Contact Form</h3>
+                            <form onsubmit="sendEmail(event)">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Your Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="Mobile" class="form-label">Your Mobile Number</label>
+                                <input type="mobile" class="form-control" id="Mobile" placeholder="Enter your phonenumber">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="4" placeholder="Write your message"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-danger btn-sm">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                            <!-- Include EmailJS SDK -->
+                <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+                <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    emailjs.init("grElZry7FiYT2sgym");  // Your Public Key podanum
+                });
+
+                function sendEmail(e) {
+                    e.preventDefault();
+                    const name = document.getElementById("name").value.trim();
+                    const email = document.getElementById("email").value.trim();
+                    const message = document.getElementById("message").value.trim();
+                    const Mobile = document.getElementById("Mobile").value.trim();
+                    if (!name || !email || !message) {
+                    alert("Please fill all fields.");
+                    return;
+                    }
+
+                    emailjs.send("service_reaz7xj", "template_zy1mxg5", {
+                    name: name,
+                    email: email,
+                    Mobile:Mobile,
+                    message: message
+                    })
+                    .then(() => {
+                    alert("✅ Message sent successfully!");
+                    e.target.reset();
+                    })
+                    .catch((error) => {
+                    alert("❌ Failed to send message. Please try again.");
+                    console.error(error);
+                    });
+                }
+                </script>
+
+
+
+
+                <!-- Google Map -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15744.217707417605!2d77.791815!3d9.416626!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06ceb2b219ab4b%3A0x31e05faafe411a0b!2sRathnapuri%20Nagar%2C%202%2F312%2C%20Meenampatti%2C%20Sivakasi%2C%20Tamil%20Nadu%20626189!5e0!3m2!1sen!2sin!4v1754903885220!5m2!1sen!2sin"
+                            width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+    </section>
+
+    <!-- Footer here -->
+    <footer class="mt-5 mb-0">
+        <div class="container-fluid footer-top-container mb-0 p-2">
+            <div class="d-flex flex-row main-row justify-content-between align-items-center text-center p-5">
+                <ul class="list-unstyled d-flex  mx-auto">
+                    <li><a href="Home.html" class="text-decoration-none text-white fw-bold">Home</a></li>
+                    <li><a href="About.html" class="text-decoration-none text-white fw-bold">About Us</a></li>
+                    <li><a href="index.html" class="text-decoration-none text-white fw-bold">Products</a></li>
+                    <li><a href="Safety.html" class="text-decoration-none text-white fw-bold">Safety Tips</a></li>
+                    <li><a href="Contact.html" class="text-decoration-none text-white fw-bold">Contact Us</a></li>
+                    <li><a href="Payment.html" class="text-decoration-none text-white fw-bold">Payment</a></li>
+                </ul>
+
+            </div>
+            <div class="d-flex flex-column address">
+                <ul class=" mx-auto">
+                    <li class="list-unstyled">
+                    Rathnapuri Nagar, Meenampatti,
+                    </li>
+                    <li class="list-unstyled">
+                        Sivakasi-Sattur Road, Sivakasi,
+                    </li>
+                    <li class="list-unstyled">
+                        Tamilnadu – 626189
+                    </li>
+                    <li class="list-unstyled">
+                        ayooracrackers@gmail.com
+                    </li>
+                </ul>
+
+            </div>
+            <div class="d-flex flex-row p-1">
+                <p class="mx-auto footer-phone">+91 9944046496 | +91 8940460124 </p>
+            </div>
+
+            <div class="d-flex flex-row p-1">
+                <div class="mx-auto">
+                    <i class="fa-brands fa-facebook-f mx-2"></i>
+                    <i class="fa-brands fa-instagram mx-2"></i>
+                    <i class="fa-brands fa-youtube mx-2"></i>
+
+                </div>
+            </div>
+            <div class=" p-5 footer-content">
+                <p class="mx-3">
+                    Online sale of firecrackers are not permitted! We value our customers and at the same time, respect jurisdiction. We request you to add your products to the cart and submit the required crackers through the enquiry button. We will contact you within 24 hrs and we will give quote through WhatsApp or phone call. 
+                    Please add and submit your enquiries and enjoy your Diwali with Ayoora Crackers Order. Our License No.—-.Ayoora Crackers Order as a company following 100% legal &amp; statutory compliances and all our shops, go-downs are maintained as per the explosive acts. We send the parcels through registered and legal transport service providers as like every other major companies in Sivakasi is doing so.           
+                </p>
+            </div>
+        </div>
+        <div class="container-fluid bottom-container">
+            <p class="text-center pt-2">Copyright @ 2023 ayooracrackers | All rights reserved</p>
+
+        </div>
+    </footer>
+
+ <!-- floating Watsapp & cAll -->
+     <div class="floating-icons d-flex flex-column gap-4">
+        <a href="tel:+919944046496" class="call-icon" title="Call Us">
+            <i class="fa-solid fa-phone-flip"></i>
+        </a>
+        <a href="https://wa.me/919944046496" class="whatsapp-icon" title="Chat on WhatsApp" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!--js for animation-->
+    <script>
+(() => {
+  const c = document.getElementById("fw");
+const ctx = c.getContext("2d", { alpha: true });
+
+  let W, H, dpr;
+
+  function resize() {
+    dpr = Math.min(2, window.devicePixelRatio || 1);
+    W = c.width  = Math.floor(innerWidth  * dpr);
+    H = c.height = Math.floor(innerHeight * dpr);
+  }
+  addEventListener("resize", resize, { passive: true });
+  resize();
+
+  // ===== Fireworks =====
+  const particles = [];
+  const rockets = [];
+
+  const COLORS = ["#ffd166", "#06d6a0", "#118ab2", "#ef476f", "#c77dff", "#ff7ab6"];
+  const GRAVITY = 0.08;
+  const FRICTION = 0.985;
+
+  function rand(min, max){ return Math.random() * (max - min) + min; }
+
+  function burst(x, y, count = 90, speed = 4, sparkle = true) {
+    const color = COLORS[(Math.random() * COLORS.length) | 0];
+    for (let i = 0; i < count; i++) {
+      const angle = (i / count) * Math.PI * 2 + rand(-0.05, 0.05);
+      const mag = speed * (0.7 + Math.random()*0.6);
+      particles.push({
+        x, y,
+        vx: Math.cos(angle) * mag,
+        vy: Math.sin(angle) * mag,
+        life: rand(60, 90),
+        alpha: 1,
+        color,
+        sparkle
+      });
+    }
+  }
+
+  function launchRocket() {
+    const x = rand(W*0.15, W*0.85);
+    const y = H + 10;
+    const peak = rand(H*0.25, H*0.55);
+    rockets.push({ x, y, vy: rand(-6.5, -8.5), peak });
+  }
+
+  let last = 0, autoTimer = 0;
+  function tick(t) {
+    requestAnimationFrame(tick);
+    const dt = Math.min(32, t - last || 16);
+    last = t;
+    autoTimer += dt;
+
+    // clear with slight fade trail
+   ctx.clearRect(0,0,W,H);
+
+    // update rockets
+    for (let i = rockets.length - 1; i >= 0; i--) {
+      const r = rockets[i];
+      r.y += r.vy;
+      r.vy += GRAVITY * 0.25;
+      // draw rocket
+      ctx.fillStyle = "#fff";
+      ctx.beginPath();
+      ctx.arc(r.x, r.y, 2.5 * dpr, 0, Math.PI*2);
+      ctx.fill();
+
+      if (r.y <= r.peak) {
+        rockets.splice(i, 1);
+        burst(r.x, r.y, Math.round(rand(60, 110)), rand(3.2, 5.2), true);
+      }
+    }
+
+    // update particles
+    for (let i = particles.length - 1; i >= 0; i--) {
+      const p = particles[i];
+      p.vx *= FRICTION;
+      p.vy = p.vy * FRICTION + GRAVITY;
+      p.x += p.vx;
+      p.y += p.vy;
+      p.life--;
+      p.alpha = Math.max(0, p.life / 90);
+
+      // draw particle
+      ctx.globalAlpha = p.alpha;
+      ctx.fillStyle = p.color;
+      ctx.fillRect(p.x, p.y, 2 * dpr, 2 * dpr);
+
+      // sparkle
+      if (p.sparkle && (p.life % 12 === 0)) {
+        ctx.globalAlpha = Math.min(1, p.alpha + 0.3);
+        ctx.fillStyle = "#fff";
+        ctx.fillRect(p.x + rand(-1,1), p.y + rand(-1,1), 2 * dpr, 2 * dpr);
+      }
+
+      if (p.life <= 0 || p.y > H + 20) particles.splice(i, 1);
+      ctx.globalAlpha = 1;
+    }
+
+    // auto-launch every ~700–900ms
+    if (autoTimer > rand(700, 900)) {
+      autoTimer = 0;
+      launchRocket();
+      if (Math.random() < 0.35) launchRocket(); // sometimes two
+    }
+  }
+  requestAnimationFrame(tick);
+
+  // interactions
+  addEventListener("pointerdown", (e) => {
+    const rect = c.getBoundingClientRect();
+    const x = (e.clientX - rect.left) * dpr;
+    const y = (e.clientY - rect.top)  * dpr;
+    burst(x, y, Math.round(rand(70, 120)), rand(3.5, 5.5), true);
+  }, { passive: true });
+
+})();
+</script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Script cdn here -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+ 
+</body>
+</html>

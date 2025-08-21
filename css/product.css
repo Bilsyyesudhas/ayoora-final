@@ -1,0 +1,328 @@
+.product-banner {
+    /* background: url('../Images/product-banner.jpg') no-repeat center center; */
+    background-size: cover;
+    height: 75vh;
+    position: relative;
+    overflow: hidden; /* hide extra particles outside */
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* clicks pass through */
+      background: transparent;
+}
+.product-main-p{
+    line-height: 2;
+    font-size: 16px;
+}
+.product-table table{
+    border: 4px solid #ffcc20bd !important;
+    color: #ffffff;
+    table-layout: auto;
+}
+.product-table table thead tr th{
+    padding:20px 10px !important;
+    background: #b11e20 !important;
+    color: #ffffff;
+}
+.colspan{
+    background-color: #C3340B;
+    /* background: #bb6653; */
+    color: #ffffff;
+    text-align: center;
+}
+.calculate-amount{
+    background: #edba9cff;
+}
+.product-table table tbody tr th img{
+    width: 100px;
+    height: 100px;
+    background: #FFFF !important;
+    
+}
+@media (min-width: 344px){
+    .product-table table tbody tr th img{
+    width: 20px;
+    height: 70px;
+    background: #FFFF !important;
+    
+}
+ .product-table .qty, .product-table .total {
+    width: 100px !important;             /* Take full available width */
+    padding: 8px;            /* Space inside the field */
+    font-size: 16px;         /* Readable text size */
+    box-sizing: border-box;  /* Include padding in total width */
+    border: 1px solid #ccc;  /* Simple border */
+    border-radius: 4px;      /* Rounded corners */
+}
+
+@media (max-width: 768px) {
+
+    .product-table .qty{
+         width: 50% !important;
+        font-size: 14px;     /* Slightly smaller font on tablets */
+        padding: 10px !important;
+    }      
+    .product-table .total {
+        width: 70% !important;
+        font-size: 14px;     /* Slightly smaller font on tablets */
+        padding: 10px !important;
+    }
+
+}
+
+@media (max-width: 480px) {
+      .product-table .qty{
+         width: 50% !important;
+        font-size: 14px;     /* Slightly smaller font on tablets */
+        padding: 10px !important;
+    }   
+      .product-table .total {
+        width: 100% !important;
+        font-size: 12px;     /* Smaller font on mobiles */
+        padding: 10px !important;
+    }
+}
+
+    .calculate-amount th span{
+    font-size: 10px !important;
+}
+.floating-summary-card{
+      width: 200px;
+
+}
+
+
+}
+@media (min-width: 360px) {
+    .product-table table tbody tr th img{
+    width: 30px;
+    height: 70px;
+    background: #FFFF !important;
+    
+}
+    .calculate-amount th span{
+        font-size: 10px !important;
+    }
+}
+
+@media (min-width: 375px){
+    .product-table table tbody tr th img{
+    width: 50px;
+    height: 70px;
+    background: #FFFF !important;
+
+    
+}
+.floating-summary-card{
+      width: 200px !important;
+
+}
+.floating-summary-card h5,h4{
+    font-size: 15px;
+}
+
+
+}
+@media (min-width: 768px){
+        .calculate-amount th span{
+        font-size: 15px !important;
+    }
+
+}
+.actual-price{
+    color: #F91D1D;
+    text-decoration: line-through;
+}
+.price{
+    color: #00A300;
+}
+.custom-input {
+  width: 100px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+.calculate-amount th{
+    vertical-align: center !important;
+    text-align: center; 
+    /* background-color: #ffcc20bd; */
+}
+@media (max-width: 669px)
+{
+    .product-table{
+        padding:0 !important;
+    }
+}
+
+/* form section style here */
+
+.form-control, .form-select{
+    background-color: #f9f9f9;
+    border :1px solid #f1f1f1;
+    border-radius: 0px !important;
+    padding: 15px 20px;
+    -webkit-appearance: none;
+    color: #000000 !important;
+    margin-bottom: 10px;
+     box-shadow: none !important;
+     border-color: none !important;}
+
+.form-submit .btn{
+    background: #ba0015;
+    padding: 10px 20px;
+    margin-top:60px;
+    font-size: 13.3px;
+}
+.upi-text{
+    color: #ba0015;
+    font-weight: bold;
+}
+.error{
+    font-size: 14px;
+    
+}
+.product-payment p{
+    font-size: 20px;
+}
+.gpay-img img{
+    width: 300px;
+    height: 350px;
+}
+.modal-close{
+    width: 60px;
+     height: 60px; 
+     border: 2px solid #dc3545;
+      border-radius: 50%;
+}
+.modal-close-check
+{
+    width: 70px;
+    height: 70px;
+    border: 2px solid #25d366;
+    border-radius: 50%;
+}
+.floating-btn {
+  position: fixed;
+  bottom: 250px;
+  right: 50px;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  font-size: 16px;
+  background-size: 100% 200%;
+  animation: blink 1s linear infinite;;
+}
+
+/* Define keyframes for color change */
+@keyframes blink {
+  0%, 100% {background-color:#33ccff;}
+  50% {background-color: #ff99cc;}
+}
+
+.floating-summary-card {
+  position: fixed;
+  bottom: 20px;
+  right: 380px;
+  width: 400px;
+    background: linear-gradient(to bottom, #C3340B , #EDBA9CFF 100%);
+
+  z-index: 999;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+}
+@media (max-width: 768px) {
+  .floating-summary-card {
+    width: 300px;
+    right: 140px;
+    font-size: 14px;
+  }
+  .floating-btn {
+    right: 140px;
+    bottom: 240px;
+      padding: 8px 18px;
+
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-summary-card {
+    width: 300px;
+    right: 50px;
+    font-size: 14px;
+  }
+  .floating-btn {
+    right: 50px;
+    bottom: 220px;
+      padding: 6px 16px;
+
+  }
+}
+@media (min-width: 344px){
+    .floating-summary-card {
+        /* width: 350px; */
+        right: 20px;
+    }
+}
+
+.card-footer{
+    background: #b11e20 !important;
+    border-radius:20px !important;
+     transform: scale(0.95);
+    animation: popIn 0.4s ease-in-out forwards;
+}
+
+.card-body span{
+    font-size:15px;
+    margin-left: 20px;
+}
+
+.floating-icons {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+}
+
+.floating-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.call-icon {
+  background-color: #0d6efd; /* Bootstrap blue */
+}
+
+.whatsapp-icon {
+  background-color: #25d366;
+}
+.floating-icons .whatsapp-icon:hover{
+      transform: scale(1.1);
+        background-color: #25d366;
+}
+.floating-icons .call-icon:hover {
+  transform: scale(1.1);
+  background-color: #0d6efd;
+}
+
+/* Invoice style herre */
