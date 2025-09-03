@@ -153,14 +153,17 @@ function calculateTotal(input) {
     const priceText = row.querySelector(".price")?.innerText || "0";
     const actualPriceText = row.querySelector(".actual-price")?.innerText || "0";
 
-    const price = parseInt(priceText.replace(/\D/g, '')) || 0;
-    const actualPrice = parseInt(actualPriceText.replace(/\D/g, '')) || 0;
+    const price = parseFloat(priceText.replace(/[^\d.]/g, '')) || 0;
+    console.log("price:", price);
+    const actualPrice = parseFloat(actualPriceText.replace(/[^\d.]/g, '')) || 0;
     const qty = parseInt(input.value) || 0;
 
     const totalField = row.querySelector(".total");
 
     if (!isNaN(price) && !isNaN(qty)) {
-        totalField.value = price * qty;
+        const total = price * qty;
+         totalField.value = total.toFixed(2); 
+        console.log("total:", totalField.value);
     } else {
         totalField.value = "";
     }
@@ -178,14 +181,15 @@ function updateSummary()
 
         rows.forEach(row => {
             const qty = parseInt(row.querySelector(".qty")?.value) || 0;
-            const price = parseInt((row.querySelector(".price")?.innerText || "0").replace(/\D/g, '')) || 0;
-            const actualPrice = parseInt((row.querySelector(".actual-price")?.innerText || "0").replace(/\D/g, '')) || 0;
+            const price = parseFloat((row.querySelector(".price")?.innerText || "0").replace(/[^\d.]/g, '')) || 0;
+            const actualPrice = parseFloat((row.querySelector(".actual-price")?.innerText || "0").replace(/[^\d.]/g, '')) || 0;
 
             grandAmound += actualPrice * qty;
             total += price * qty;
             saved += (actualPrice - price) * qty;
-            finalTotal = (grandAmound - saved) + 30;
+            // finalTotal = (grandAmound - saved) + 30;
         });
+        let finalTotal = total + 30;
 
         document.getElementById("grandAmount").innerText = `Rs. ${grandAmound}`;
         document.getElementById("savedAmount").innerText = `Rs. ${saved}`;
@@ -293,7 +297,7 @@ function handleSubmit(event)
                 const itemName = row.querySelector(".item-name")?.innerText.trim() || '';
                 const qty = parseInt(row.querySelector("input.qty")?.value) || 0;
                 const priceText = row.querySelector(".price")?.innerText || "0";
-                const price = parseInt(priceText.replace(/\D/g, '')) || 0;
+                const price = parseFloat(priceText.replace(/[^\d.]/g, '')) || 0;
                 const total = price * qty;
                  console.log("Product:", itemName, "Qty:", qty, "Price:", price);
 
@@ -411,9 +415,9 @@ function fillInvoice(data) {
         rows += `<tr>
             <td>${i + 1}</td>
             <td>${item.name}</td>
-            <td>Rs. ${item.price}</td>
+            <td>Rs ${item.price}</td>
             <td>${item.qty}</td>
-            <td>Rs. ${item.total}</td>
+            <td>Rs ${item.total}</td>
         </tr>`;
         grandTotal += item.total;
         grandQty += item.qty;
