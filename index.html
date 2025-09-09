@@ -17,7 +17,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
+<style>
+/* modal overlay */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.zoomable-img {
+  width: 80px; /* small size in table */
+  cursor: zoom-in;
+}
+</style>
 </head>
 
 <body>
@@ -107,6 +137,16 @@
                     special crackers, Fancy Crackers,
                     Kids Crackers, Marriage Crackers, and Gift Boxes. To order crackers ayoora
                 </p>
+<!-- divmodel -->
+
+                <div id="imgModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+
+
+
                 <div class="table-responsive product-table">
                     <table class="table table-bordered">
                         <thead class="text-center">
@@ -126,7 +166,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/bird.jpeg" alt="Iphone">
+                                    <img src="../images/bird.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">2.75 BIRD CRACKERS</span><br>
@@ -151,7 +191,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/lakshmi1.jpeg" alt="Iphone">
+                                    <img src="../images/lakshmi1.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">3.5 MEDIUM LAKSHMI</span><br>
@@ -175,7 +215,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/lakshmi2.jpeg" alt="Iphone">
+                                    <img src="../images/lakshmi2.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">4 INCH LAKSHMI CRACKERS</span><br>
@@ -199,7 +239,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/joker.jpeg" alt="Iphone">
+                                    <img src="../images/joker.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">4 INCHDELUXE LAKSHIMI JOKKER</span><br>
@@ -224,7 +264,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/jallikattu.jpeg" alt="Iphone">
+                                    <img src="../images/jallikattu.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">5 INCH JALLIKATTU</span><br>
@@ -249,7 +289,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/kumki.jpeg" alt="Iphone">
+                                    <img src="../images/kumki.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">KUMKI</span><br>
@@ -274,7 +314,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/bagubali.jpeg" alt="Iphone">
+                                    <img src="../images/bagubali.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">BAGUBALI 4.5 INCH</span><br>
@@ -299,7 +339,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/4inchgoldlakshimi.jpg" alt="Iphone">
+                                    <img src="../images/4inchgoldlakshimi.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">4 INCH GOLD LAKSHMI</span><br>
@@ -324,7 +364,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/rider1.jpeg" alt="Iphone">
+                                    <img src="../images/rider1.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">KING RIDER</span><br>
@@ -349,7 +389,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/kuruvi.jpeg" alt="Iphone">
+                                    <img src="../images/kuruvi.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">KIDARI</span><br>
@@ -374,7 +414,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/hulk.jpg" alt="Iphone">
+                                    <img src="../images/hulk.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">HULK</span><br>
@@ -405,7 +445,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/electric1.jpeg" alt="Iphone">
+                                    <img src="../images/electric1.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">10 CM ELECTRIC SPARKLER</span><br>
@@ -427,7 +467,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/colourspark10.jpeg" alt="Iphone">
+                                    <img src="../images/colourspark10.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">10 CM COLOUR SPARKLER</span><br>
@@ -450,7 +490,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/electrispark12.jpeg" alt="Iphone">
+                                    <img src="../images/electrispark12.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">12 CM ELECTRIC SPARKLER</span><br>
@@ -472,7 +512,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/colourspark12.jpeg" alt="Iphone">
+                                    <img src="../images/colourspark12.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">12 CM COLOUR SPARKLER</span><br>
@@ -495,7 +535,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/15 CM ELECTRIC.jpg" alt="Iphone">
+                                    <img src="../images/15 CM ELECTRIC.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">15 CM ELECTRIC SPARKLER</span><br>
@@ -518,7 +558,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/colourspark10.jpeg" alt="Iphone">
+                                    <img src="../images/colourspark10.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">15 CM COLOUR SPARKLER</span><br>
@@ -541,7 +581,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/greenspark10.jpeg" alt="Iphone">
+                                    <img src="../images/greenspark10.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">10 CM GREEN SPARKLER</span><br>
@@ -565,7 +605,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/greenspark15.jpeg" alt="Iphone">
+                                    <img src="../images/greenspark15.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">12 CM GREEN SPARKLER</span><br>
@@ -589,7 +629,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/greenspark12.jpeg" alt="Iphone">
+                                    <img src="../images/greenspark12.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">15 CM GREEN SPARKLER</span><br>
@@ -613,7 +653,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/30cmgreenspark.png">
+                                    <img src="../images/30cmgreenspark.png" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">30 CM GREEN SPARKLER</span><br>
@@ -637,7 +677,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/redspark10.jpeg" alt="Iphone">
+                                    <img src="../images/redspark10.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">10 CM RED SPARKLER</span><br>
@@ -661,7 +701,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/12CM RED.jpg" alt="Iphone">
+                                    <img src="../images/12CM RED.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">12 CM RED SPARKLER</span><br>
@@ -684,7 +724,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/30cmelectricspark.jpg" alt="Iphone">
+                                    <img src="../images/30cmelectricspark.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">30 CM ELECTRIC SPARKLER</span><br>
@@ -707,7 +747,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/30cmcolourspark.jpeg" alt="Iphone">
+                                    <img src="../images/30cmcolourspark.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">30 CM COLOUR SPARKLER</span><br>
@@ -730,7 +770,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/30cmredspark.jpeg" alt="Iphone">
+                                    <img src="../images/30cmredspark.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">30 CM RED SPARKLER</span><br>
@@ -754,7 +794,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/15cmredspark.jpg" alt="Iphone">
+                                    <img src="../images/15cmredspark.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name"> 15 CM RED SPARKLER</span><br>
@@ -778,7 +818,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/50cmelectricspark.jpg" alt="Iphone">
+                                    <img src="../images/50cmelectricspark.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">50 CM ELECTRIC SPARKLER</span><br>
@@ -802,7 +842,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/50cmcolourspark.jpg" alt="Iphone">
+                                    <img src="../images/50cmcolourspark.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">50 CM COLOUR SPARKLER</span><br>
@@ -832,7 +872,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/flowerpotbig.jpg" alt="Iphone">
+                                    <img src="../images/flowerpotbig.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">FLOWER POT BIG</span><br>
@@ -856,7 +896,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/flowerspecial.jpeg" alt="Iphone">
+                                    <img src="../images/flowerspecial.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">FLOWER POT SPECIAL</span><br>
@@ -881,7 +921,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/flowerasoka.jpeg" alt="Iphone">
+                                    <img src="../images/flowerasoka.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">FLOWER POTS ASOKA</span><br>
@@ -906,7 +946,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/flowerjumpo.jpeg" alt="Iphone">
+                                    <img src="../images/flowerjumpo.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">FLOWER POT JUMBO POTS</span><br>
@@ -932,7 +972,7 @@
 
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/flower2.jpeg" alt="Iphone">
+                                    <img src="../images/flower2.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">FLOWER POT DELUX</span><br>
@@ -957,7 +997,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/flowersuperdeluxe.jpg" alt="Iphone">
+                                    <img src="../images/flowersuperdeluxe.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">FLOWER POT SUPER DELUX</span><br>
@@ -983,7 +1023,7 @@
 
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/colourkotiflower.jpg" alt="Iphone">
+                                    <img src="../images/colourkotiflower.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">COLOUR KOTI</span><br>
@@ -1008,7 +1048,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/tricolourflower.jpg" alt="Iphone">
+                                    <img src="../images/tricolourflower.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">TRI COLOUR FOUNDEN</span><br>
@@ -1032,7 +1072,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/koti1.jpeg" alt="Iphone">
+                                    <img src="../images/koti1.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">COLOUR KOTI DELUXE</span><br>
@@ -1063,7 +1103,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/chakkar2.jpeg" alt="Iphone">
+                                    <img src="../images/chakkar2.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">GROUND CHAKKAR ASHOKA</span><br>
@@ -1088,7 +1128,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/groundchakkarbig.jpg" alt="Iphone">
+                                    <img src="../images/groundchakkarbig.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">GROUND CHAKKARS BIG</span><br>
@@ -1114,7 +1154,7 @@
 
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/groundchakkarspecial.jpeg" alt="Iphone">
+                                    <img src="../images/groundchakkarspecial.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">GROUND CHAKKARS SPECIAL</span><br>
@@ -1139,7 +1179,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/chakkardelux.jpeg" alt="Iphone">
+                                    <img src="../images/chakkardelux.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">GROUND CHAKKARS DELUXE</span><br>
@@ -1164,7 +1204,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/discowheel.jpeg" alt="Iphone">
+                                    <img src="../images/discowheel.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">DISCO WHEEL</span><br>
@@ -1195,7 +1235,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/star1.jpeg" alt="Iphone">
+                                    <img src="../images/star1.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">1.5 INCH TWINKLING STAR</span><br>
@@ -1220,7 +1260,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/star2.jpeg" alt="Iphone">
+                                    <img src="../images/star2.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">4 FEET DELUXE TWINKLING STAR</span><br>
@@ -1251,7 +1291,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/sivakasipencil.jpg" alt="Iphone">
+                                    <img src="../images/sivakasipencil.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">SIVAKASI PENCIL</span><br>
@@ -1276,7 +1316,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/selfiestick.jpg" alt="Iphone">
+                                    <img src="../images/selfiestick.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">SELFIE STICK</span><br>
@@ -1307,7 +1347,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/whistling1.jpeg" alt="Iphone">
+                                    <img src="../images/whistling1.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">WHISLING ROCKETS</span><br>
@@ -1332,7 +1372,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/rocketbomb.jpg" alt="Iphone">
+                                    <img src="../images/rocketbomb.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">ROCKET BOMB</span><br>
@@ -1357,7 +1397,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/lunki1.jpeg" alt="Iphone">
+                                    <img src="../images/lunki1.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">LUNIK ROCKET</span><br>
@@ -1382,7 +1422,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/soundrock.jpeg" alt="Iphone">
+                                    <img src="../images/soundrock.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">2 INCH SOUND ROCKET</span><br>
@@ -1415,7 +1455,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/bomb1.jpeg" alt="Iphone">
+                                    <img src="../images/bomb1.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">HYDRO BOMB(TERROR BOMB) </span><br>
@@ -1440,7 +1480,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/bulletbomb.jpg" alt="Iphone">
+                                    <img src="../images/bulletbomb.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">DIGITAL BOMB </span><br>
@@ -1467,7 +1507,7 @@
 
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/kingbomb.webp" alt="Iphone">
+                                    <img src="../images/kingbomb.webp" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">KING OF KING </span><br>
@@ -1492,7 +1532,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/halfpaperbomb.jpeg" alt="Iphone">
+                                    <img src="../images/halfpaperbomb.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">1/2 KG PAPER BOMB</span><br>
@@ -1517,7 +1557,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/3in1paperbomb.webp" alt="Iphone">
+                                    <img src="../images/3in1paperbomb.webp" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">1/4 KG PAPER BOMB</span><br>
@@ -1541,7 +1581,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/1kgpaperbomb.jpg" alt="Iphone">
+                                    <img src="../images/1kgpaperbomb.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">1 KG PAPER BOMB</span><br>
@@ -1565,7 +1605,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/classicbomb.jpeg" alt="Iphone">
+                                    <img src="../images/classicbomb.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">CLASSIC BOMB</span><br>
@@ -1590,7 +1630,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/555bomb.jpg" alt="Iphone">
+                                    <img src="../images/555bomb.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">555 BOMB</span><br>
@@ -1621,7 +1661,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/redbijili.jpeg" alt="Iphone">
+                                    <img src="../images/redbijili.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">RED BIJILI</span><br>
@@ -1646,7 +1686,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/strippedbijili.jpg" alt="Iphone">
+                                    <img src="../images/strippedbijili.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">STRIPPED BIJILLI</span><br>
@@ -1678,7 +1718,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/laptopbig.webp" alt="Iphone">
+                                    <img src="../images/laptopbig.webp" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">LAPTOP BIG</span><br>
@@ -1703,7 +1743,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/5in1colourmatch.jpg" alt="Iphone">
+                                    <img src="../images/5in1colourmatch.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">5 IN 1</span><br>
@@ -1735,7 +1775,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/kitkat.jpeg" alt="Iphone">
+                                    <img src="../images/kitkat.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">KITKAT</span><br>
@@ -1760,7 +1800,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/crazypop.jpg" alt="Iphone">
+                                    <img src="../images/crazypop.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">CRAZY POP</span><br>
@@ -1786,7 +1826,7 @@
 
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/peacock3hole.webp" alt="Iphone">
+                                    <img src="../images/peacock3hole.webp" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">PEACOCK 3 HOLE</span><br>
@@ -1811,7 +1851,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/starpop.jpg" alt="Iphone">
+                                    <img src="../images/starpop.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">STAR POP</span><br>
@@ -1837,7 +1877,7 @@
 
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/photo1.jpeg" alt="Iphone">
+                                    <img src="../images/photo1.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">PHOTO FLASH</span><br>
@@ -1862,7 +1902,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/dannce.jpeg" alt="Iphone">
+                                    <img src="../images/dannce.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">DANCING BUTTERFLY</span><br>
@@ -1887,7 +1927,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/megasiren.jpg" alt="Iphone">
+                                    <img src="../images/megasiren.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">SIREN BIG</span><br>
@@ -1912,7 +1952,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/helicopter.jpg" alt="Iphone">
+                                    <img src="../images/helicopter.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">HELICOPTER</span><br>
@@ -1937,7 +1977,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/spinner1.jpeg" alt="Iphone">
+                                    <img src="../images/spinner1.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name"> SPINNER DELUXE</span><br>
@@ -1962,7 +2002,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/tinbeer.webp" alt="Iphone">
+                                    <img src="../images/tinbeer.webp" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name"> TIN BEER</span><br>
@@ -1987,7 +2027,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/goldrice.webp" alt="Iphone">
+                                    <img src="../images/goldrice.webp" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name"> GOLDEN DROPS</span><br>
@@ -2012,7 +2052,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/90kwatts.jpg" alt="Iphone">
+                                    <img src="../images/90kwatts.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">90 WATTS</span><br>
@@ -2038,7 +2078,7 @@
 
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/peacockfeather.jpg" alt="Iphone">
+                                    <img src="../images/peacockfeather.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">PEACOCK FEATHER</span><br>
@@ -2063,7 +2103,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/waterfalls.jpg" alt="Iphone">
+                                    <img src="../images/waterfalls.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name"> WATER QUEEN</span><br>
@@ -2088,7 +2128,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/bambaram.webp" alt="Iphone">
+                                    <img src="../images/bambaram.webp" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">PARROT SPINNER PLASTIC</span><br>
@@ -2113,7 +2153,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/magicshow.jpg" alt="Iphone">
+                                    <img src="../images/magicshow.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">MONEY BANK</span><br>
@@ -2138,7 +2178,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/singpop.jpg" alt="Iphone">
+                                    <img src="../images/singpop.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">SINGING POP</span><br>
@@ -2163,7 +2203,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/smoke1.jpeg" alt="Iphone">
+                                    <img src="../images/smoke1.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">SMOKE COLOUR</span><br>
@@ -2188,7 +2228,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/benta.jpg" alt="Iphone">
+                                    <img src="../images/benta.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">BENTA</span><br>
@@ -2213,7 +2253,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/discoshower.jpeg" alt="Iphone">
+                                    <img src="../images/discoshower.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">COLOUR RAIN</span><br>
@@ -2238,7 +2278,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/bada-peacock.jpeg" alt="Iphone">
+                                    <img src="../images/bada-peacock.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">BADA PEACOCK</span><br>
@@ -2263,7 +2303,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/lotusdiscowheel.jpg" alt="Iphone">
+                                    <img src="../images/lotusdiscowheel.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">4*4 LOTUS DISCO WHEEL</span><br>
@@ -2289,7 +2329,7 @@
 
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/peacockdance.jpg" alt="Iphone">
+                                    <img src="../images/peacockdance.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">DANCING PEACOCK</span><br>
@@ -2314,7 +2354,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/foxstar.jpg" alt="Iphone">
+                                    <img src="../images/foxstar.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">FOX STAR</span><br>
@@ -2348,7 +2388,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/bat1.jpeg" alt="Iphone">
+                                    <img src="../images/bat1.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">BAT & BALL</span><br>
@@ -2373,7 +2413,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/cylinderbomb.jpg" alt="Iphone">
+                                    <img src="../images/cylinderbomb.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">CYCLINDER BOMB</span><br>
@@ -2398,7 +2438,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/lovelypearl.jpg" alt="Iphone">
+                                    <img src="../images/lovelypearl.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">LOVELY PEARL</span><br>
@@ -2423,7 +2463,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/tesco.jpeg" alt="Iphone">
+                                    <img src="../images/tesco.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">TESCO COLOUR CONE</span><br>
@@ -2448,7 +2488,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/canonball.jpg" alt="Iphone">
+                                    <img src="../images/canonball.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">CANON BALL</span><br>
@@ -2473,7 +2513,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/siren.jpg" alt="Iphone">
+                                    <img src="../images/siren.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">SIREN </span><br>
@@ -2499,7 +2539,7 @@
 
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/ak47.jpeg" alt="Iphone">
+                                    <img src="../images/ak47.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">THOR (SUTHIYAL)</span><br>
@@ -2524,7 +2564,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/guithar.webp" alt="Iphone">
+                                    <img src="../images/guithar.webp" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">GUITHAR</span><br>
@@ -2549,7 +2589,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/hanuman.jpg" alt="Iphone">
+                                    <img src="../images/hanuman.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">HANUMAN GADHAI</span><br>
@@ -2584,7 +2624,7 @@
 
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/100deluxe.jpeg" alt="Iphone">
+                                    <img src="../images/100deluxe.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">100 DELUXE</span><br>
@@ -2609,7 +2649,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/50deluxe.jpg" alt="Iphone">
+                                    <img src="../images/50deluxe.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">50 DELUXE</span><br>
@@ -2634,7 +2674,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/24deluxe.webp" alt="Iphone">
+                                    <img src="../images/24deluxe.webp" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">24 DELUXE</span><br>
@@ -2665,7 +2705,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/tajmahal.jpeg" alt="Iphone">
+                                    <img src="../images/tajmahal.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">1K TAJMAHAL GOLD</span><br>
@@ -2690,7 +2730,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/2kgold.jpeg" alt="Iphone">
+                                    <img src="../images/2kgold.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">2K GOLD</span><br>
@@ -2715,7 +2755,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/5kgold.webp" alt="Iphone">
+                                    <img src="../images/5kgold.webp" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">5K GOLD</span><br>
@@ -2740,7 +2780,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/10kgold.jpg" alt="Iphone">
+                                    <img src="../images/10kgold.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">10K GOLD</span><br>
@@ -2765,7 +2805,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/100gaint.webp" alt="Iphone">
+                                    <img src="../images/100gaint.webp" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">100 GAINT</span><br>
@@ -2790,7 +2830,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/200gaint.webp" alt="Iphone">
+                                    <img src="../images/200gaint.webp" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">200 GAINT</span><br>
@@ -2815,7 +2855,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/28gaint.jpeg" alt="Iphone">
+                                    <img src="../images/28gaint.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">28 GAINT</span><br>
@@ -2840,7 +2880,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/56gaint.jpeg" alt="Iphone">
+                                    <img src="../images/56gaint.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">56 GAINT</span><br>
@@ -2865,7 +2905,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/28chorsa.webp" alt="Iphone">
+                                    <img src="../images/28chorsa.webp" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">28 CHORSA</span><br>
@@ -2897,7 +2937,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/black&white.jpeg" alt="Iphone">
+                                    <img src="../images/black&white.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">BLACK AND WHITE</span><br>
@@ -2922,7 +2962,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/pentagun.jpeg" alt="Iphone">
+                                    <img src="../images/pentagun.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">PENTAGON</span><br>
@@ -2947,7 +2987,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/whitehouse.webp" alt="Iphone">
+                                    <img src="../images/whitehouse.webp" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">WHITE HOUSE</span><br>
@@ -2972,7 +3012,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/asrafifountain.webp" alt="Iphone">
+                                    <img src="../images/asrafifountain.webp" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">ASRAFI FOUNTAIN BIG</span><br>
@@ -3004,7 +3044,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/littlepeacock.jpeg" alt="Iphone">
+                                    <img src="../images/littlepeacock.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">LITTLE PEACOCK</span><br>
@@ -3035,7 +3075,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/25itemgift.webp" alt="Iphone">
+                                    <img src="../images/25itemgift.webp" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">25 ITEMS</span><br>
@@ -3060,7 +3100,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/30itemgit.jpg" alt="Iphone">
+                                    <img src="../images/30itemgit.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">30 ITEMS</span><br>
@@ -3085,7 +3125,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/40itemgift.webp" alt="Iphone">
+                                    <img src="../images/40itemgift.webp" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name"> 40 ITEMS</span><br>
@@ -3110,7 +3150,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/50itemgift.webp" alt="Iphone">
+                                    <img src="../images/50itemgift.webp" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">50 ITEMS</span><br>
@@ -3135,7 +3175,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/60itemgift.png" alt="Iphone">
+                                    <img src="../images/60itemgift.png" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">60 ITEMS</span><br>
@@ -3168,7 +3208,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/3000familypack.png" alt="Iphone">
+                                    <img src="../images/3000familypack.png" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">3000 FAMILY PACK</span><br>
@@ -3194,7 +3234,7 @@
 
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/5000family.png" alt="Iphone">
+                                    <img src="../images/5000family.png" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">5000 FAMILY PACK</span><br>
@@ -3226,7 +3266,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/25shotmulticolour.jpeg" alt="Iphone">
+                                    <img src="../images/25shotmulticolour.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">25 SHOT MULTICOLOUR BRAND</span><br>
@@ -3252,7 +3292,7 @@
 
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/30shotmulti.jpg" alt="Iphone">
+                                    <img src="../images/30shotmulti.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">30 SHOT MULTICOLOUR BRAND</span><br>
@@ -3277,7 +3317,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/60shotmulti.jpeg" alt="Iphone">
+                                    <img src="../images/60shotmulti.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">60 SHOT MULTICOLOUR BRAND</span><br>
@@ -3302,7 +3342,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/120shotmulti.jpeg" alt="Iphone">
+                                    <img src="../images/120shotmulti.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">120 SHOT MULTICOLOUR BRAND</span><br>
@@ -3327,7 +3367,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/240shotmulti.jpg" alt="Iphone">
+                                    <img src="../images/240shotmulti.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">240 SHOT MULTICOLOUR BRAND</span><br>
@@ -3359,7 +3399,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/1inchfancy.jpg" alt="Iphone">
+                                    <img src="../images/1inchfancy.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">1 INCH CHOTTA FANCY</span><br>
@@ -3384,7 +3424,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/2inchfancy.jpg" alt="Iphone">
+                                    <img src="../images/2inchfancy.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">2 INCH FANCY OUT</span><br>
@@ -3409,7 +3449,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/3.5inchroyal.jpg" alt="Iphone">
+                                    <img src="../images/3.5inchroyal.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">3.5 INCH ROYAL</span><br>
@@ -3434,7 +3474,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/nayagara.jpg" alt="Iphone">
+                                    <img src="../images/nayagara.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">3.5 INCH MAGIC FALLS</span><br>
@@ -3459,7 +3499,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/4inchfancy.jpg" alt="Iphone">
+                                    <img src="../images/4inchfancy.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">4 INCH FANCY CITY JUMPERS</span><br>
@@ -3484,7 +3524,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/3.5inchfancy.jpg" alt="Iphone">
+                                    <img src="../images/3.5inchfancy.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">3.5 INCH FANCY(ALEXA)</span><br>
@@ -3509,7 +3549,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/4doubleball.jpg" alt="Iphone">
+                                    <img src="../images/4doubleball.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">4.5 INCH STROME</span><br>
@@ -3534,7 +3574,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/lighthouse.webp" alt="Iphone">
+                                    <img src="../images/lighthouse.webp" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name">5 INCH LIGHT HOUSE</span><br>
@@ -3559,7 +3599,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/fancy.webp" alt="Iphone">
+                                    <img src="../images/fancy.webp" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name"> FANCY</span><br>
@@ -3590,7 +3630,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/7 SHOT COLOUR.png" alt="Iphone">
+                                    <img src="../images/7 SHOT COLOUR.png" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name"> 7 SHOT COLOUR</span><br>
@@ -3615,7 +3655,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/12shot.webp" alt="Iphone">
+                                    <img src="../images/12shot.webp" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name"> 12 SHOT COLOUR</span><br>
@@ -3640,7 +3680,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/12shotcrack.jpg" alt="Iphone">
+                                    <img src="../images/12shotcrack.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name"> 12 SHOT CRACKLING</span><br>
@@ -3665,7 +3705,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/30 SHOT MULTI COLOUR.jpeg" alt="Iphone">
+                                    <img src="../images/30 SHOT MULTI COLOUR.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name"> 30 SHOT MULTI COLOUR</span><br>
@@ -3690,7 +3730,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/60shotmulti.jpeg" alt="Iphone">
+                                    <img src="../images/60shotmulti.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name"> 60 SHOT MULTI COLOUR</span><br>
@@ -3715,7 +3755,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/120shotmulti.jpeg" alt="Iphone">
+                                    <img src="../images/120shotmulti.jpeg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name"> 120 SHOT MULTI COLOUR</span><br>
@@ -3740,7 +3780,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/240shotmulti.jpg" alt="Iphone">
+                                    <img src="../images/240shotmulti.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name"> 240 SHOT MULTI COLOUR</span><br>
@@ -3765,7 +3805,7 @@
                             </tr>
                             <tr class="calculate-amount">
                                 <th class="img-th">
-                                    <img src="../images/25 SHOT RIDER.jpg" alt="Iphone">
+                                    <img src="../images/25 SHOT RIDER.jpg" alt="Iphone" class="zoomable-img">
                                 </th>
                                 <th>
                                     <span class="item-name"> 25 SHOT RIDER</span><br>
@@ -4115,6 +4155,27 @@
         </a>
     </div>
 
+<script>
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("modalImg");
+  const closeBtn = document.querySelector(".modal .close");
+
+  // attach click event to all table images
+  document.querySelectorAll(".zoomable-img").forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "flex";
+      modalImg.src = img.src;
+    });
+  });
+
+  // close on X click
+  closeBtn.addEventListener("click", () => modal.style.display = "none");
+
+  // close on outside click
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="../js/script.js"></script>
