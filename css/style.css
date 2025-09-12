@@ -260,7 +260,7 @@ background: linear-gradient(to right, #ff6a00, #ee0979);}
     /* our pricelist container */
 
 .pricelist-container{
-    background-image: url('../Images/price.jpg');
+    background-image: url('../images/pricelist.jpg');
     color: #ffffff;
 
 }
