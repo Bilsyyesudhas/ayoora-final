@@ -3920,31 +3920,31 @@
                     <div class="col-lg-6 col-sm-12 col-md-6">
                         <div class="form-group mb-2">
                             <label for="name" class="form-label">Name <span class="upi-text">(Numbers and special characters are not allowed)</span></label>
-                            <input type="text" class="form-control" id="name">
+                            <input type="text" class="form-control" id="name" name="cus_name">
                         </div>
                         <div class="error text-danger" id="nameError"></div>
 
                         <div class="form-group">
                             <label for="address">Address</label>
-                            <textarea class="form-control" id="address" rows="3" ></textarea>
+                            <textarea class="form-control" id="address" rows="3" name="cus_address"></textarea>
                         </div>
                         <div class="error text-danger" id="addressError"></div>
 
                         <div class="form-group mb-2">
                             <label for="number1" class="form-label">Mobile Number</label>
-                            <input type="text" class="form-control" id="number1"  onkeypress="return isNumber(event)">
+                            <input type="text" class="form-control" id="number1" name="cus_phone1" onkeypress="return isNumber(event)">
                         </div>
                         <div class="error text-danger" id="number1Error"></div>
 
                         <div class="form-group mb-2">
                             <label for="number2" class="form-label">Whats App Number</label>
-                            <input type="text" class="form-control" id="number2"  onkeypress="return isNumber(event)">
+                            <input type="text" class="form-control" id="number2"  name="cus_phone2" onkeypress="return isNumber(event)">
                         </div>
                         <div class="error text-danger" id="number2Error"></div>
 
                         <div class="form-group mb-2">
                             <label for="email" class="form-label">Email Address</label>
-                            <input type="email" class="form-control" id="email" >
+                            <input type="email" class="form-control" id="email" name="cus_email" >
                         </div>
                         <div class="error text-danger" id="emailError"></div>
                         
@@ -3952,13 +3952,13 @@
                     <div class="col-lg-6 col-sm-12 col-md-6 form-submit">
                          <div class="form-group mb-2">
                             <label for="area" class="form-label">Reference Person</label>
-                            <input type="text" class="form-control" id="person-name" >
+                            <input type="text" class="form-control" id="person-name" name="cus_per_name" >
                         </div>
                         <div class="error text-danger" id="personError"></div>
 
                         <div class="form-group mb-2">
                             <label for="city" class="form-label">Near by City</label>
-                            <input type="text" class="form-control" id="city" >
+                            <input type="text" class="form-control" id="city" name="cus_city" >
                         </div>
                         <div class="error text-danger" id="cityError"></div>
 
@@ -3975,7 +3975,7 @@
                         </div>
                         <div class="form-group mb-2">
                             <label for="number" class="form-label">Product Total Value</label>
-                            <input type="text" class="form-control" id="number" placeholder="Overall Total" readonly>
+                            <input type="text" class="form-control" id="number" name="total_amount" placeholder="Overall Total" readonly>
                         </div>
                         
                          <button type="submit" class="btn text-white rounded-pill" id="submitBtn">Submit Order</button>
