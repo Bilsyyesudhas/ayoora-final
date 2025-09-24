@@ -165,9 +165,9 @@ function handleSubmit(event) {
     const validations = [
         {field: name, errorId:'nameError', regex:/^[a-zA-Z ]+$/, msg:'Required'},
         {field: phone1, errorId:'number1Error', regex:/^.+$/, msg:'Required'},
-        {field: phone2, errorId:'number2Error', regex:/^.+$/, msg:'Required'},
-        {field: email, errorId:'emailError', regex:/^[^\s@]+@[^\s@]+\.[^\s@]+$/, msg:'Invalid'},
-        {field: person, errorId:'personError', regex:/^(?!Select name$).+$/, msg:'Please select'},
+        // {field: phone2, errorId:'number2Error', regex:/^.+$/, msg:'Required'},
+        // {field: email, errorId:'emailError', regex:/^[^\s@]+@[^\s@]+\.[^\s@]+$/, msg:'Invalid'},
+        // {field: person, errorId:'personError', regex:/^(?!Select name$).+$/, msg:'Please select'},
         {field: city, errorId:'cityError', regex:/^.+$/, msg:'Required'}
     ];
 
