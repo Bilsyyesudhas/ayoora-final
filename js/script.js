@@ -6,7 +6,7 @@ window.requestAnimationFrame =
     window.requestAnimationFrame       || 
     window.webkitRequestAnimationFrame || 
     window.mozRequestAnimationFrame    || 
-    window.oRequestAnimationFrame      || 
+    window.requestAnimationFrame      || 
     window.msRequestAnimationFrame     || 
     function (callback) { window.setTimeout(callback, 1000/60); };
 
@@ -153,18 +153,17 @@ window.addEventListener("load", () => {
 function handleSubmit(event) {
     event.preventDefault();
     let valid = true;
+
     const name = document.getElementById('name').value;
-    const address = document.getElementById('address').value;
+    const address = document.getElementById('address').value; // No validation on this
     const phone1 = document.getElementById('number1').value;
     const phone2 = document.getElementById('number2').value;
     const email = document.getElementById('email').value;
     const person = document.getElementById('person-name').value;
     const city = document.getElementById('city').value;
 
-    // Validation
     const validations = [
         {field: name, errorId:'nameError', regex:/^[a-zA-Z ]+$/, msg:'Required'},
-        {field: address, errorId:'addressError', regex:/^.+$/, msg:'Required'},
         {field: phone1, errorId:'number1Error', regex:/^.+$/, msg:'Required'},
         {field: phone2, errorId:'number2Error', regex:/^.+$/, msg:'Required'},
         {field: email, errorId:'emailError', regex:/^[^\s@]+@[^\s@]+\.[^\s@]+$/, msg:'Invalid'},
@@ -172,10 +171,18 @@ function handleSubmit(event) {
         {field: city, errorId:'cityError', regex:/^.+$/, msg:'Required'}
     ];
 
-    validations.forEach(v=>{
-        if(!v.regex.test(v.field.trim())) { document.getElementById(v.errorId).textContent=v.msg; valid=false; }
-        else document.getElementById(v.errorId).textContent='';
+    validations.forEach(v => {
+        const value = v.field ? v.field.toString().trim() : '';
+        if (!value || !v.regex.test(value)) {
+            document.getElementById(v.errorId).textContent = v.msg;
+            valid = false;
+        } else {
+            document.getElementById(v.errorId).textContent = '';
+        }
     });
+
+    // Address field error always blank
+    document.getElementById('addressError').textContent = '';
 
     if(!valid) return;
 
@@ -185,7 +192,6 @@ function handleSubmit(event) {
         return;
     }
 
-    // Collect items
     const items=[];
     document.querySelectorAll(".calculate-amount").forEach(row=>{
         const itemName=row.querySelector(".item-name")?.innerText.trim()||'';
@@ -198,11 +204,11 @@ function handleSubmit(event) {
     const invoiceData={name,address,email,city,person,phone1,phone2,items};
     localStorage.setItem("invoiceData", JSON.stringify(invoiceData));
 
-    // Show success modal
     new bootstrap.Modal(document.getElementById('orderSuccessModal')).show();
 
     // Reset form
-    const form = document.getElementById('registrationForm'); form.reset();
+    const form = document.getElementById('registrationForm'); 
+    form.reset();
     document.querySelectorAll(".qty, .total").forEach(input=>input.value='');
     document.getElementById("grandAmount").innerText="Rs. 0.00";
     document.getElementById("savedAmount").innerText="Rs. 0.00";
@@ -215,7 +221,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById("successModalOkBtn").addEventListener("click", () => {
         const savedData = JSON.parse(localStorage.getItem("invoiceData")) || {};
 
-        // EmailJS init
         (function(){ emailjs.init("grElZry7FiYT2sgym"); })();
 
         const templateParams = {
@@ -234,7 +239,6 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(res=>console.log('✅ Email sent!', res.status, res.text))
         .catch(err=>console.error('❌ Email failed...', err));
 
-        // PDF generation
         fillInvoice(savedData);
         const invoiceContainer = document.getElementById('invoice-container');
         invoiceContainer.style.display='block';
