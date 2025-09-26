@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
 //google sheet
 
-// const isLocal = location.hostname === "127.0.0.1" || location.hostname === "localhost";
+const isLocal = location.hostname === "127.0.0.1" || location.hostname === "localhost";
 
 fetch("https://script.google.com/macros/s/AKfycbxOlfPTCKvg_4z6DG20k_0tgJiv9VjFJ7l_y7EMdrV9hdctIrAXw49gqDiUS-Nt4Cgx/exec", {
     method: "POST",
@@ -269,7 +269,7 @@ fetch("https://script.google.com/macros/s/AKfycbxOlfPTCKvg_4z6DG20k_0tgJiv9VjFJ7
         cus_city: savedData.city,
         total_amount: savedData.items?.reduce((sum,item)=>sum+item.total,0) + 30 || 0
     }),
-    // mode: isLocal ? "no-cors" : "cors"
+    mode: "no-cors"  
 })
 .then(res => { if(!isLocal) return res.json(); })
 .then(d => { if(d) console.log("✅ Google Sheet Updated:", d); })
