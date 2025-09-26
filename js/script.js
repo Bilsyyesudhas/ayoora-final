@@ -253,27 +253,32 @@ document.addEventListener('DOMContentLoaded', () => {
         },500);
         
 //google sheet
+fetch("https://script.google.com/macros/s/AKfycbzisg9vlv62utFZCaA9Sa78D_yLMr4E48ENh9DBoDJD1zFWAh7MO-LljskKTVzlRV3j/exec", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+        cus_name: savedData.name,
+        cus_address: savedData.address,
+        cus_phone1: savedData.phone1,
+        cus_phone2: savedData.phone2,
+        cus_email: savedData.email,
+        cus_per_name: savedData.person,
+        cus_city: savedData.city,
+        total_amount: savedData.items.reduce((sum,item)=>sum+item.total,0)+30
+    }),
+    mode: "cors"
+})
+.then(res => res.json())
+.then(d => console.log("✅ Google Sheet Updated:", d))
+.catch(err => console.error("❌ Google Sheet Error:", err));
 
-const isLocal = location.hostname === "127.0.0.1" || location.hostname === "localhost";
 
-    fetch("https://script.google.com/macros/s/AKfycbylfsCO7WdCS-jWxTYM9B5alciaQGzhDnTl0mH2nDWS6BH77pFjkcX1-Pqa_8wbiAah/exec", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            cus_name: savedData.name,
-            cus_address: savedData.address,
-            cus_phone1: savedData.phone1,
-            cus_phone2: savedData.phone2,
-            cus_email: savedData.email,
-            cus_per_name: savedData.person,
-            cus_city: savedData.city,
-            total_amount: savedData.items.reduce((sum,item)=>sum+item.total,0)+30
-        }),
-        mode: isLocal ? "no-cors" : "cors"
-    })
-    .then(res => { if(!isLocal) return res.json(); })
-    .then(d => { if(d) console.log("✅ Google Sheet Updated:", d); })
-    .catch(err => console.error("❌ Google Sheet Error:", err));
+
+
+
+
+
+
     });
 
 
