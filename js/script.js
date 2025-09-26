@@ -253,7 +253,10 @@ document.addEventListener('DOMContentLoaded', () => {
         },500);
         
 //google sheet
-fetch("https://script.google.com/macros/s/AKfycbzisg9vlv62utFZCaA9Sa78D_yLMr4E48ENh9DBoDJD1zFWAh7MO-LljskKTVzlRV3j/exec", {
+
+const isLocal = location.hostname === "127.0.0.1" || location.hostname === "localhost";
+
+fetch("https://script.google.com/macros/s/AKfycbyv5YvXeGkPBZbrImEDbyq3kiFoWeE74ySITPd_7DB2apSA7yGymxpX4-x-HptUaf-M/exec", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -264,12 +267,17 @@ fetch("https://script.google.com/macros/s/AKfycbzisg9vlv62utFZCaA9Sa78D_yLMr4E48
         cus_email: savedData.email,
         cus_per_name: savedData.person,
         cus_city: savedData.city,
-        total_amount: savedData.items.reduce((sum,item)=>sum+item.total,0)+30
+        total_amount: savedData.items?.reduce((sum,item)=>sum+item.total,0) + 30 || 0
     }),
-    mode: "cors"
+    mode: isLocal ? "no-cors" : "cors" // Important
 })
-.then(res => res.json())
-.then(d => console.log("✅ Google Sheet Updated:", d))
+.then(res => {
+    if (!isLocal) return res.json(); // Only parse response on live
+})
+.then(d => {
+    if(d) console.log("✅ Google Sheet Updated:", d);
+    if(isLocal) console.log("✅ Local test: request sent (no-cors, cannot see response)");
+})
 .catch(err => console.error("❌ Google Sheet Error:", err));
 
 
