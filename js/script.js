@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const isLocal = location.hostname === "127.0.0.1" || location.hostname === "localhost";
 
-fetch("https://script.google.com/macros/s/AKfycbyv5YvXeGkPBZbrImEDbyq3kiFoWeE74ySITPd_7DB2apSA7yGymxpX4-x-HptUaf-M/execgit ", {
+fetch("https://script.google.com/macros/s/AKfycbxOlfPTCKvg_4z6DG20k_0tgJiv9VjFJ7l_y7EMdrV9hdctIrAXw49gqDiUS-Nt4Cgx/exec", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
